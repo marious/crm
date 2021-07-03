@@ -27,6 +27,7 @@ class UserService extends BaseService
                 ->setModel($user)
                 ->handle();
 
+
         if (!$user->roles->count()) {
             throw new AuthenticationException(trans('default.no_roles_found'));
         }

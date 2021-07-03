@@ -2,8 +2,10 @@
 
 namespace App\Repositories\Core\Auth;
 
+use App\Models\Core\Auth\Role;
 use App\Models\Core\Auth\User;
 use App\Repositories\Core\BaseRepository;
+use Illuminate\Support\Collection;
 
 class UserRepository extends BaseRepository
 {
@@ -24,6 +26,9 @@ class UserRepository extends BaseRepository
         });
     }
 
+    /**
+     * @return Collection
+     */
     public function getAuthUserPermissions()
     {
         $user = $this->getCachedAuthUserWithRoleAndPermissions();

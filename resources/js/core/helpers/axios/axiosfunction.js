@@ -1,4 +1,4 @@
-export default class Axiosfunction {
+export default class AxiosFunction {
     static axiosGet(url, data = null) {
         return data ? axios.get(url, data) : axios.get(url);
     }

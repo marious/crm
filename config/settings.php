@@ -21,6 +21,7 @@ return [
         ['name' => 'thousand_separator', 'value' => ',', 'context' => 'app', 'autoload' => 0, 'public' => 1],
         ['name' => 'number_of_decimal', 'value' => '2', 'context' => 'app', 'autoload' => 0, 'public' => 1],
         ['name' => 'currency_position', 'value' => 'prefix_with_space', 'context' => 'app', 'autoload' => 0, 'public' => 1],
+        ['name' => 'admin_prefix', 'value' => env('ADMIN_PREFIX', 'admin'), 'context' => 'app', 'autoload' => 0, 'public' => 1],
     ],
     'brand' => [
         ['name' => 'avatar', 'value' => null, 'context' => 'brand'],

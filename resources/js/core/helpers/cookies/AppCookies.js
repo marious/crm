@@ -17,7 +17,7 @@ Vue.use(VueCookie);
  * example: '1d
  */
 
-export default class AppCookie {
+export default class AppCookies {
     static config(expireTimes,path,domain,secure,sameSite){
         $cookies.config(expireTimes,path, domain, secure, sameSite);
     }

@@ -2,10 +2,23 @@
 
 namespace App\Models\Core\Auth;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Core\BaseModel;
+use Spatie\Activitylog\Traits\LogsActivity;
 
-class Type extends Model
+class Type extends BaseModel
 {
-    use HasFactory;
+    use LogsActivity;
+
+    protected $fillable = [
+        'name', 'alias'
+    ];
+
+    protected static $logAttributes = [
+        'name', 'alias'
+    ];
+
+    public static function findByAlias(string $alias)
+    {
+        return self::query()->whereAlias($alias)->first();
+    }
 }

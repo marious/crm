@@ -61,7 +61,7 @@ trait UserMethod
 
 
     /**
-     * The result will be cached. it will be deleted if any updated happens 
+     * The result will be cached. it will be deleted if any updated happens
      * in user model.
      */
     public function admin($type = 'app', $brand_id = null)
@@ -72,7 +72,7 @@ trait UserMethod
                         ->where('is_default', 1)
                         ->when($brand_id, function (Builder $query) use ($brand_id) {
                             $query->where('brand_id', $brand_id);
-                        }) 
+                        })
                         ->whereHas('type', function (Builder $query) use ($type) {
                             $query->where('alias', $type);
                         })
@@ -82,11 +82,9 @@ trait UserMethod
 
     public static function findByEmail(string $email)
     {
-        return self::where('email', $email)
-                ->whereHas('status', function (Builder $builder) {
-                    $builder->whereNotIn('name', ['status_inactive', 'status_invited']);
-                })
-                ->firstOrFail();
+        return self::where('email', $email)->whereHas('status', function (Builder $builder) {
+                     $builder->whereNotIn('name', ['status_inactive', 'status_invited']);
+                })->firstOrFail();
     }
 
     public function invite()

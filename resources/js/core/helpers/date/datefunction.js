@@ -1,4 +1,4 @@
-export default class Datefunction {
+export default class DateFunction {
     /**
      * compare between two dates
      * */

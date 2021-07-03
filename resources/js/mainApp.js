@@ -3,6 +3,10 @@ import "./plugins";
 import Vue from "vue";
 import vuexI18n from "vuex-i18n";
 import moment from "moment";
+import "./core/coreApp";
+import "./crm/crmComponent";
+import "./crm/Helpers/helpers";
+import crmVuexStore from "./crm/Store";
 
 
 window.moment = moment;
@@ -11,6 +15,18 @@ window.Vue = Vue;
 // for working with subfolder
 window.axios.defaults.baseURL = window.localStorage.getItem('base_url') !=="" ? window.localStorage.getItem('base_url') : window.location.origin;
 
+
+Vue.use(vuexI18n.plugin, crmVuexStore);
+let language = JSON.parse(window.localStorage.getItem("app-languages"));
+let key = window.localStorage.getItem("app-language");
+Vue.i18n.add(key, language);
+// set the start locale to use
+Vue.i18n.set(key);
+
+const app = new Vue({
+    store: crmVuexStore,
+    el: "#app",
+});
 
 window.axios.interceptors.response.use(
     function(response) {

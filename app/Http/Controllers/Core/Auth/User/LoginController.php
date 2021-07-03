@@ -22,6 +22,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+
         try {
             $this->service->login();
             $route = home_route();
@@ -31,7 +32,7 @@ class LoginController extends Controller
             ]);
         } catch (Exception $ex) {
             return response()->json([
-                'message' => ex instanceof ModelNotFoundException ? trans('default.resource_not_found', ['resource' => trans('default.user')]) : $exception->getMessage()
+                'message' => $ex instanceof ModelNotFoundException ? trans('default.resource_not_found', ['resource' => trans('default.user')]) : $ex->getMessage()
             ], 403);
         }
     }

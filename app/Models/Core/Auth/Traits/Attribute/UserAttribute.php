@@ -4,7 +4,7 @@ namespace App\Models\Core\Auth\Traits\Attribute;
 
 use Illuminate\Support\Facades\Hash;
 
-class UserAttribute
+trait UserAttribute
 {
     public function setPasswordAttribute($password)
     {

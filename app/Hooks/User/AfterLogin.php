@@ -18,6 +18,4 @@ class AfterLogin extends HookContract
 
         return $this->model;
     }
-
-
 }
