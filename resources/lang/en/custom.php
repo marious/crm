@@ -702,6 +702,9 @@ return array_merge([
     'follower_duplicate' => 'The follower is already exists.',
     'person_duplicate' => 'The person is already exists.',
     'organization_duplicate' => 'The organization is already exists.',
-    'change_logs' => 'Change logs'
+    'change_logs' => 'Change logs',
+
+    // Product
+    'product_categories' => 'Product Categories',
 
 ], include 'CRM/permissions.php');

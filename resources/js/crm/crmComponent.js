@@ -22,3 +22,8 @@ Vue.component(
     "app-general-settings",
     require("./Component/Views/Settings/GeneralSetting").default
 );
+
+
+// Product
+Vue.component('app-product-categories',
+    require('./Component/Views/Product/Categories/CategoriesList').default);
