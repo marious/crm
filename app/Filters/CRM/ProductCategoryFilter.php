@@ -2,7 +2,18 @@
 
 namespace App\Filters\CRM;
 
-class ProductCategoryFilter
-{
+use App\Filters\CRM\Traits\DateFilterTrait;
+use App\Filters\FilterBuilder;
+use Illuminate\Database\Eloquent\Builder;
 
+class ProductCategoryFilter extends FilterBuilder
+{
+    use DateFilterTrait;
+
+    public function search($search = null)
+    {
+        return $this->builder->when($search, function (Builder $builder) use ($search) {
+            $builder->where('name', 'LIKE', "%$search%");
+        });
+    }
 }

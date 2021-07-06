@@ -706,5 +706,7 @@ return array_merge([
 
     // Product
     'product_categories' => 'Product Categories',
+    'product_category' => 'Product Category',
+    'add_product_category' => 'Add Product Category',
 
 ], include 'CRM/permissions.php');

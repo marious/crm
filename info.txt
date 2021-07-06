@@ -1,0 +1,6 @@
+=============================== How the application work =======================================
+- In controller when we called service dependency like that $this->service then
+we called method not exist on Service class the service class extends BaseService which
+implements magic method __call that search for undefined method on model class.
+ex: $this->service->filters()  . filters is method defined on model as scopeFilters
+================================================================================================

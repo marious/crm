@@ -27,3 +27,6 @@ Vue.component(
 // Product
 Vue.component('app-product-categories',
     require('./Component/Views/Product/Categories/CategoriesList').default);
+
+Vue.component('app-product-category-modal',
+    require('./Component/Views/Product/Categories/ProductCategoryModal').default);

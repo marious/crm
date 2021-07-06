@@ -36,6 +36,6 @@ Route::group(['prefix' => $adminPrefix, 'middleware' => 'admin', 'as' => 'core.'
  * We separated the route files according to the features
  * Such as contact.php for Person & Organization related routes
  */
-Route::group(['prefix' => 'crm',], function () {
+Route::group(['prefix' => 'crm'], function () {
     include_route_files(__DIR__ . '/CRM/');
 });
