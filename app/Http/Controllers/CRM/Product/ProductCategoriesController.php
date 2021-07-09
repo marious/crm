@@ -45,5 +45,7 @@ class ProductCategoriesController extends Controller
         if ($category->delete()) {
             return deleted_responses('product_category');
         }
+
+        return  false;
     }
 }

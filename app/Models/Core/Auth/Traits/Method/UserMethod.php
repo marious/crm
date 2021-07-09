@@ -66,19 +66,20 @@ trait UserMethod
      */
     public function admin($type = 'app', $brand_id = null)
     {
-        return cache()->remember($type . '-admin-'. $this->id, 84000, function () use ($type, $brand_id) {
+        return cache()->remember($type . '-admin-' . $this->id, 84000, function () use ($type, $brand_id) {
             return $this->roles()
-                        ->where('is_admin', 1)
-                        ->where('is_default', 1)
-                        ->when($brand_id, function (Builder $query) use ($brand_id) {
-                            $query->where('brand_id', $brand_id);
-                        })
-                        ->whereHas('type', function (Builder $query) use ($type) {
-                            $query->where('alias', $type);
-                        })
-                        ->exists();
+                ->where('is_admin', 1)
+                ->where('is_default', 1)
+                ->when($brand_id, function (Builder $query) use ($brand_id) {
+                    $query->where('brand_id', $brand_id);
+                })
+                ->whereHas('type', function (Builder $query) use ($type) {
+                    $query->where('alias', $type);
+                })
+                ->exists();
         });
     }
+
 
     public static function findByEmail(string $email)
     {

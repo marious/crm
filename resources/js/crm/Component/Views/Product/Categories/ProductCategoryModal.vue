@@ -3,7 +3,14 @@
         @close-modal="closeModal">
 
         <template slot="header">
-            <h5 class="modal-title">Edit</h5>
+            <h5 class="modal-title">
+                {{ selectedUrl ? $t('edit') : $t('add') }} {{ $t('product_category') }}
+            </h5>
+            <button type="button" class="close outline-none" data-dismiss="modal" aria-label="Close">
+                <span>
+                    <app-icon :name="'x'"></app-icon>
+                </span>
+            </button>
         </template>
 
         <template slot="body">

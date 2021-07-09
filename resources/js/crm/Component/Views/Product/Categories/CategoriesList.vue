@@ -67,7 +67,7 @@ export default {
                     }
                 ],
                 showSearch: true,
-                showFilter: false,
+                showFilter: true,
                 paginationType: "pagination",
                 responsive: true,
                 rowLimit: 10,
