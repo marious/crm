@@ -110,7 +110,7 @@ export default {
         },
         closeModal() {
             this.isModalActive = false;
-            this.selectedUrlContact = '';
+            this.selectedUrlCategory = '';
             $('#product-category-modal').modal('hide');
         }
     }

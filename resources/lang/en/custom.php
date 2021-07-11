@@ -708,5 +708,8 @@ return array_merge([
     'product_categories' => 'Product Categories',
     'product_category' => 'Product Category',
     'add_product_category' => 'Add Product Category',
+    'product_brands'    => 'Product Brands',
+    'product_brand' => 'Product Brand',
+    'add_product_brand' => 'Add Product Brand',
 
 ], include 'CRM/permissions.php');

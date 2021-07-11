@@ -18,13 +18,18 @@
                     'permission' => true,
                 ],
                 [
-                    'name' => 'Organizations',
-                    'url' => request()->root().'/crm/org/list',
+                    'name' => 'Categories',
+                    'url' => route('product_category.list'),
                     'permission' => true,
                 ],
                 [
-                    'name' => 'Lead groups',
-                    'url' => request()->root().'/crm/contact/type/list',
+                    'name' => 'Brands',
+                    'url' => route('product_brand.list'),
+                    'permission' => true,
+                ],
+                 [
+                    'name' => 'Units',
+                    'url' => route('product_unit.list'),
                     'permission' => true,
                 ],
             ],

@@ -14,4 +14,14 @@ class FrontendController extends Controller
     {
         return view('crm.products.categories');
     }
+
+    public function productBrandList()
+    {
+        return view('crm.products.brands');
+    }
+
+    public function productUnitList()
+    {
+        return view('crm.products.units');
+    }
 }

@@ -30,3 +30,16 @@ Vue.component('app-product-categories',
 
 Vue.component('app-product-category-modal',
     require('./Component/Views/Product/Categories/ProductCategoryModal').default);
+
+Vue.component('app-product-brands',
+    require('./Component/Views/Product/Brands/BrandsList').default);
+
+Vue.component('app-product-brand-modal',
+    require('./Component/Views/Product/Brands/ProductBrandModal').default);
+
+Vue.component('app-product-units',
+    require('./Component/Views/Product/Units/UnitsList').default);
+
+Vue.component('app-product-unit-modal',
+    require('./Component/Views/Product/Units/ProductUnitModal').default);
+

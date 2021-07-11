@@ -20,7 +20,7 @@ class ProductCategoriesController extends Controller
     {
        return $this->service
                     ->filters($this->filter)
-                    ->paginate(request('per_page', 5));
+                    ->paginate(request('per_page', 15));
     }
 
     public function store(Request $request)

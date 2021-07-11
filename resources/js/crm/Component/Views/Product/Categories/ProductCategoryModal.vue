@@ -53,7 +53,7 @@ export default {
     mixins: [FormSubmitMixin],
     data() {
         return {
-            formData: {class: 'primary'}
+            formData: {}
         }
     },
     methods: {
