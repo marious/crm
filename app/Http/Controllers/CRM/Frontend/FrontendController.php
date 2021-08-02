@@ -24,4 +24,9 @@ class FrontendController extends Controller
     {
         return view('crm.products.units');
     }
+
+    public function productAttributeList()
+    {
+        return view('crm.products.attributes');
+    }
 }

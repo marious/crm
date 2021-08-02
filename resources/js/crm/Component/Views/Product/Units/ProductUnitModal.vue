@@ -26,6 +26,13 @@
                                    v-model="formData.name"
                                    :required="true"
                                    :error-message="$errorMessage(errors, 'name')"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="mb-0 col-sm-3 d-flex align-items-center">
+                        <label>{{ $t('short_name') }}</label>
+                    </div>
+                    <div class="col-sm-9">
                         <app-input type="text"
                                    :placeholder="$t('enter_name')"
                                    name="short_name"

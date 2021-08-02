@@ -711,5 +711,11 @@ return array_merge([
     'product_brands'    => 'Product Brands',
     'product_brand' => 'Product Brand',
     'add_product_brand' => 'Add Product Brand',
+    'add_product_unit' => 'Add Product Unit',
+    'product_units' => 'Product Units',
+    'product_unit' => 'Product Unit',
+    'product_attributes' => 'Product Attributes',
+    'add_product_attribute' => 'Add Product Attribute',
+
 
 ], include 'CRM/permissions.php');

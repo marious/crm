@@ -15,5 +15,5 @@ class ProductUnit extends BaseModel
         BooTrait;
 
     protected $table = 'product_units';
-    protected $fillable = ['name', 'short_name'];
+    protected $fillable = ['name', 'short_name', 'created_by'];
 }

@@ -43,3 +43,8 @@ Vue.component('app-product-units',
 Vue.component('app-product-unit-modal',
     require('./Component/Views/Product/Units/ProductUnitModal').default);
 
+Vue.component('app-product-attributes',
+    require('./Component/Views/Product/Attributes/AttributesList').default);
+
+Vue.component('app-product-attribute-modal',
+    require('./Component/Views/Product/Units/ProductUnitModal').default);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CRM\Product\ProductAttributeController;
 use App\Http\Controllers\CRM\Product\ProductCategoriesController;
 use App\Http\Controllers\CRM\Product\ProductBrandsController;
 use App\Http\Controllers\CRM\Product\ProductUnitController;
@@ -13,5 +14,8 @@ Route::resource('product/brands', ProductBrandsController::class)
         ->except(['create', 'edit']);
 
 Route::resource('product/units', ProductUnitController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('product/attributes', ProductAttributeController::class)
     ->except(['create', 'edit']);
 

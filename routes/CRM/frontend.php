@@ -11,3 +11,6 @@ Route::get('product/brand/list', [FrontendController::class, 'productBrandList']
 
 Route::get('product/unit/list', [FrontendController::class, 'productUnitList'])
     ->name('product_unit.list');
+
+Route::get('product/attribute/list', [FrontendController::class, 'productAttributeList'])
+    ->name('product_attribute.list');

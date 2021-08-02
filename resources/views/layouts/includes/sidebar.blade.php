@@ -18,6 +18,11 @@
                     'permission' => true,
                 ],
                 [
+                    'name' => 'Variant Attribute',
+                    'url' => route('product_attribute.list'),
+                    'permission' => true,
+                ],
+                [
                     'name' => 'Categories',
                     'url' => route('product_category.list'),
                     'permission' => true,
