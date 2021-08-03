@@ -1,5 +1,5 @@
 @extends('layouts.crm')
-@section('title', 'Brands')
+@section('title', 'Attributes')
 @section('contents')
     <app-product-attributes />
 @endsection

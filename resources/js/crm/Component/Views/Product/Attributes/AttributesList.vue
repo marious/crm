@@ -24,16 +24,15 @@
                    @action="getAction"
         />
 
-        <app-product-brand-modal v-if="isModalActive"
+        <app-product-attribute-modal v-if="isModalActive"
                                  :table-id="tableId"
-                                 :selected-url="selectedUrlBrand"
+                                 :selected-url="selectedurlAttribute"
                                  @close-modal="closeModal"/>
 
         <app-confirmation-modal v-if="confirmationModalActive"
                                 modal-id="delete-modal"
                                 @confirmed="confirmed"
                                 @cancelled="cancelled"/>
-
 
     </div>
 </template>
@@ -51,7 +50,7 @@ export default  {
             confirmationModalActive: false,
             isModalActive: false,
             tableId:"product-attributes-table",
-            selectedUrlBrand: "",
+            selectedUrlAttribute: "",
             options: {
                 name: this.$t('pipeline_table'),
                 url: 'crm/product/attributes',
@@ -100,7 +99,7 @@ export default  {
     methods: {
         getAction(row, action, active) {
             if (action.title === this.$t('edit')) {
-                this.selectedUrlBrand = `crm/product/attributes/${row.id}`;
+                this.selectedUrlAttribute = `crm/product/attributes/${row.id}`;
                 this.isModalActive = true;
             } else if (action.title === this.$t('delete')) {
                 this.deleteUrl = `crm/product/attributes/${row.id}`;
@@ -114,7 +113,7 @@ export default  {
         },
         closeModal() {
             this.isModalActive = false;
-            this.selectedUrlBrand = '';
+            this.selectedUrlAttribute = '';
             $('#product-attribute-modal').modal('hide');
         }
 
