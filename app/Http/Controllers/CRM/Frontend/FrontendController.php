@@ -10,6 +10,11 @@ class FrontendController extends Controller
         return view('crm.settings.settings');
     }
 
+    public function productsList()
+    {
+        return view('crm.products.index');
+    }
+
     public function productCategoryList()
     {
         return view('crm.products.categories');

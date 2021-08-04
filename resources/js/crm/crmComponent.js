@@ -25,6 +25,12 @@ Vue.component(
 
 
 // Product
+Vue.component('app-products',
+        require('./Component/Views/Product/Products/ProductsList').default);
+
+Vue.component('create-product',
+    require('./Component/Views/Product/Products/Create').default);
+
 Vue.component('app-product-categories',
     require('./Component/Views/Product/Categories/CategoriesList').default);
 

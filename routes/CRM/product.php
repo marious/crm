@@ -3,8 +3,11 @@
 use App\Http\Controllers\CRM\Product\ProductAttributeController;
 use App\Http\Controllers\CRM\Product\ProductCategoriesController;
 use App\Http\Controllers\CRM\Product\ProductBrandsController;
+use App\Http\Controllers\CRM\Product\ProductController;
 use App\Http\Controllers\CRM\Product\ProductUnitController;
 use Illuminate\Support\Facades\Route;
+
+Route::resource('product', ProductController::class);
 
 //Route::get('product/categories', [ProductCategoriesController::class, 'categories']);
 Route::resource('product/categories', ProductCategoriesController::class)
