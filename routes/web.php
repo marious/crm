@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 
 $adminPrefix = env('ADMIN_PREFIX', 'admin');
 
+
 Route::get('/test', function () {
     echo 'test';
 });
@@ -36,6 +37,6 @@ Route::group(['prefix' => $adminPrefix, 'middleware' => 'admin', 'as' => 'core.'
  * We separated the route files according to the features
  * Such as contact.php for Person & Organization related routes
  */
-Route::group(['middleware' => 'admin'], function () {
+Route::group(['middleware' => 'admin', 'prefix' => 'crm'], function () {
     include_route_files(__DIR__ . '/CRM/');
 });

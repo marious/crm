@@ -717,6 +717,7 @@ return array_merge([
     'product_attributes' => 'Product Attributes',
     'add_product_attribute' => 'Add Product Attribute',
     'create_product' => 'Create Product',
-
+    'product_type' => 'Product Type',
+    'choose_product_type' => 'Choose Product Type',
 
 ], include 'CRM/permissions.php');

@@ -7,7 +7,10 @@ use App\Http\Controllers\CRM\Product\ProductController;
 use App\Http\Controllers\CRM\Product\ProductUnitController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('product', ProductController::class);
+Route::get('products/product_type_list', [ProductController::class, 'getProductTypeList'])
+    ->name('products.product_list');
+
+Route::resource('products', ProductController::class);
 
 //Route::get('product/categories', [ProductCategoriesController::class, 'categories']);
 Route::resource('product/categories', ProductCategoriesController::class)

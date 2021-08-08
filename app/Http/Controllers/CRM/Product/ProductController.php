@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\CRM\Product;
 
+use App\Enums\ProductTypeEnum;
 use App\Filters\CRM\ProductFilter;
 use App\Http\Controllers\Controller;
 use App\Services\CRM\Product\ProductService;
@@ -43,5 +44,10 @@ class ProductController extends Controller
     public function destroy()
     {
 
+    }
+
+    public function getProductTypeList()
+    {
+        return ProductTypeEnum::toArray();
     }
 }
