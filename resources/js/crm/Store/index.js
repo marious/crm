@@ -3,6 +3,8 @@ import Vuex from "vuex";
 import {formatted_date, formatted_time} from "../Helpers/helpers";
 import ProductTypeList from "./modules/Product/Product";
 import CategoryList from "./modules/Category/Category";
+import BrandsList from "./modules/Brand/Brand";
+import UnitList from "./modules/Unit/Unit";
 
 Vue.use(Vuex);
 
@@ -22,6 +24,8 @@ export default new Vuex.Store({
     },
     modules: {
         ProductTypeList,
-        CategoryList
+        CategoryList,
+        BrandsList,
+        UnitList
     }
 });
