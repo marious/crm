@@ -5,6 +5,7 @@ import ProductTypeList from "./modules/Product/Product";
 import CategoryList from "./modules/Category/Category";
 import BrandsList from "./modules/Brand/Brand";
 import UnitList from "./modules/Unit/Unit";
+import ProductVariant from "./modules/Variant/Variant";
 
 Vue.use(Vuex);
 
@@ -26,6 +27,7 @@ export default new Vuex.Store({
         ProductTypeList,
         CategoryList,
         BrandsList,
-        UnitList
+        UnitList,
+        ProductVariant
     }
 });

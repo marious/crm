@@ -19,6 +19,10 @@ class ProductAttributeController extends Controller
 
     public function index()
     {
+        if (request()->exists('all')) {
+            return $this->service->select('id', 'name')->get();
+        }
+
         return $this->service
             ->filters($this->filter)
             ->paginate(request('per_page', 15));

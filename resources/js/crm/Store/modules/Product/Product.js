@@ -9,7 +9,7 @@ const getters = {
 };
 
 const mutations = {
-    TYPES_LIST(stae, data) {
+    TYPES_LIST(state, data) {
         state.ProductTypeList = data;
     }
 };

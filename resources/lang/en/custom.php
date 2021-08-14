@@ -388,5 +388,9 @@ return array_merge([
     'choose_product_type' => 'Choose Product Type',
     'choose_category' => 'Choose Category',
     'product_variant' => 'Product Variant',
+    'add_initial_quantity' => 'Add Initial Quantity',
+    'purchase_price' => 'Purchase Price',
+    'selling_price' => 'Selling Price',
+    'quantity' => 'Quantity',
 
 ], include 'CRM/permissions.php');

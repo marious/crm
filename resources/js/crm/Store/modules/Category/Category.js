@@ -1,4 +1,4 @@
-import {axiosGet} from "../../../helpers/axioshelper";
+    import {axiosGet} from "../../../helpers/axioshelper";
 
 const state = {
     categoryList: [],

@@ -154,8 +154,28 @@
                                 <div class="col-lg-12 col-xl-12">
                                     <div>
                                         <app-input
-                                            v-modal="formData.product_variant"
+                                            name="productVariant"
+                                            v-model="formData.product_variant"
                                             :list="[{id: 1, value: $t('standard_product')}, {id: 2, value: $t('variant_product')}]"
+                                            type="radio"
+                                            required="true"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-xl-6">
+                            <div class="form-group">
+                                <div class="col-lg-6 col-xl-6 d-flex align-items center mt-2 mb-2">
+                                    <label for="unit" class="mb-lg-0">{{ $t('add_initial_quantity') }}</label>
+                                </div>
+                                <div class="col-lg-12 col-xl-12">
+                                    <div>
+                                        <app-input
+                                            name="productQuantity"
+                                            v-model="formData.product_quantity"
+                                            :list="[{id: 1, value: $t('yes')}, {id: 2, value: $t('no')}]"
                                             type="radio"
                                             required="true"
                                         />
@@ -167,6 +187,142 @@
 
 
                     </div><!-- ./ form-group -->
+
+
+                    <div v-if="!checkVariant">
+                        <div class="form-group row">
+
+                            <div class="col-lg-4 col-xl-4">
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-xl-12 d-flex align-items center mt-2 mb-2">
+                                        <label for="purchasePrice" class="mb-lg-0">{{ $t('purchase_price') }}</label>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div>
+                                            <app-input
+                                                type="decimal"
+                                                name="purchasePrice"
+                                                v-model="formData.purchasePrice"
+                                                id="purchasePrice"
+                                                :required="true"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-xl-4">
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-xl-12 d-flex align-items center mt-2 mb-2">
+                                        <label for="sellingPrice" class="mb-lg-0">{{ $t('selling_price') }}</label>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div>
+                                            <app-input
+                                                type="decimal"
+                                                name="sellingPrice"
+                                                v-model="formData.sellingPrice"
+                                                id="sellingPrice"
+                                                :required="true"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-xl-4">
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-xl-12 d-flex align-items center mt-2 mb-2">
+                                        <label for="sku" class="mb-lg-0">{{ $t('sku') }}</label>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div>
+                                            <app-input
+                                                type="text"
+                                                name="sku"
+                                                v-model="formData.sku"
+                                                id="sku"
+                                                :required="true"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div><!-- ./ form-group -->
+
+
+                        <div class="form-group row">
+
+                            <div class="col-lg-4 col-xl-4" v-if="initialQuantity == 1">
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-xl-12 d-flex align-items center mt-2 mb-2">
+                                        <label for="quantity" class="mb-lg-0">{{ $t('quantity') }}</label>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div>
+                                            <app-input
+                                                type="number"
+                                                name="quantity"
+                                                v-model="formData.standardproductQuantity"
+                                                id="quantity"
+                                                :required="true"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div><!-- ./ form-group -->
+
+                    </div>
+
+
+                    <div v-else id="addVariantSection">
+                        <div class="row">
+                            <div class="col-5">
+                                <h5>{{ $t('add_product_variants') }}</h5>
+                            </div>
+                            <div class="col-7">
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <div class="text-right mr-2" v-if="!id">
+                                            <a
+                                                class="btn btn-primary app-color text-white"
+                                                data-toggle="modal"
+                                                data-target="#attributes-add-edit-modal"
+                                                @click.prevent="openProductAttributeModal"
+                                            >
+                                                <i class="la la-plus-circle"></i>
+                                                {{ $t('lang.add_new_variant') }}
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div v-if="!id">
+                                            <select
+                                                id="inputState"
+                                                class="custom-select"
+                                            >
+                                                <option
+                                                    selected
+                                                    disabled
+                                                >{{ $t('lang.add_another_variant') }}</option>
+                                                <option
+                                                    v-for="productAttribute in productVariantList"
+                                                    :value="productAttribute.id"
+                                                >{{ productAttribute.name }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <div class="form-group">
@@ -192,6 +348,11 @@
             v-if="isUnitModalActive"
             @close-modal="closeUnitModal"
         />
+
+        <app-product-attribute-modal
+            v-if="isProductAttributeModalActive"
+            @close-modal="closeProductAttributeModal"
+            />
     </div>
 </template>
 
@@ -209,6 +370,9 @@ export default {
             isCategoryModalActive: false,
             isBrandModalActive: false,
             isUnitModalActive: false,
+            isProductAttributeModalActive: false,
+            checkVariant: true,
+            initialQuantity: 1,
         }
     },
 
@@ -216,7 +380,8 @@ export default {
         ...mapGetters({
             categoryList: "getCategory",
             brandList: "getBrand",
-            unitList: "getUnit"
+            unitList: "getUnit",
+            productVariantList: "getProductVariant",
         })
     },
 
@@ -256,6 +421,18 @@ export default {
             this.isUnitModalActive = false;
         },
 
+        openProductAttributeModal() {
+            this.isProductAttributeModalActive = true;
+            $('#product-attribute-modal').modal('show');
+
+        },
+
+        closeProductAttributeModal() {
+            this.$store.dispatch("getProductVariant");
+            $('#product-attribute-modal').modal('hide');
+            this.isProductAttributeModalActive = false;
+        },
+
         getProductTypeList() {
             this.axiosGet('crm/products/product_type_list').then( ({data}) => {
                 this.productTypeList = data;
@@ -268,6 +445,7 @@ export default {
         this.$store.dispatch("getCategory");
         this.$store.dispatch("getBrand");
         this.$store.dispatch("getUnit");
+        this.$store.dispatch("getProductVariant");
     }
 }
 </script>
